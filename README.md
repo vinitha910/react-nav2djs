@@ -1,33 +1,34 @@
 # react-nav2djs
 
 [![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+[![NPM](https://nodei.co/npm/react-nav2djs.png)](https://nodei.co/npm/react-nav2djs/)
 
 This is a React wrapper for [nav2djs](http://wiki.ros.org/nav2djs). See demo for example usage.
 
+## Parameters
+
+- ros: the roslib ROS object
+- id: some random string used as the id of the canvas
+- width: width of the canvas
+- height: height of the canvas
+- serverName: action server topic
+
+The default values:
 ```javascript
-class Demo extends Component {
-  render() {
-    return <div>
-      <h1>react-nav2djs Demo</h1>
-      <Nav2d id='random' width={750} height={800} serverName='/move_base'/>
-    </div>
-  }
+Nav2d.defaultProps = {
+  ros: new ROSLIB.Ros({
+    url : 'ws://localhost:9090'
+  }),
+  id: 'nav2d',
+  width: 500,
+  height: 500,
+  serverName: '/move_base'
+};
 ```
+
 ## Radom things
 
 Since neither `nav2djs` or `ros2djs` implements a CommonJS interface, I manually implement the interface for them.
 
-## TODO
-
-- Add `propTypes`
-
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
-
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
-
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+[build-badge]: https://img.shields.io/travis/yodahuang/react-nav2djs/master.png?style=flat-square
+[build]: https://travis-ci.org/yodahuang/react-nav2djs
