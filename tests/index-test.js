@@ -15,9 +15,8 @@ describe('Component', () => {
     unmountComponentAtNode(node)
   })
 
-  it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
+  it('Can render', () => {
+    render(<Component id='random' width={750} height={800} serverName='/move_base'/>, node, () => {
     })
   })
 })
