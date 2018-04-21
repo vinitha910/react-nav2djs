@@ -30,5 +30,10 @@ Nav2d.defaultProps = {
 
 Since neither `nav2djs` or `ros2djs` implements a CommonJS interface, I manually implement the interface for them.
 
+## Existing problems
+
+- When rendering the map for the first time, it's implmented in a blocking way, so your browser will be freeze for like 2 seconds
+- The triangles are not showing up properly
+
 [build-badge]: https://img.shields.io/travis/yodahuang/react-nav2djs/master.png?style=flat-square
 [build]: https://travis-ci.org/yodahuang/react-nav2djs
