@@ -13,23 +13,19 @@
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "test": "nwb test-react",
-    "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
   },
   "dependencies": {
     "eventemitter2": "^5.0.1",
     "latest-createjs": "^1.0.24",
-    "roslib": "^0.20.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "17.x",
+    "react-dom": "^17.0.2",
+    "roslib": "^1.2.0"
   },
   "peerDependencies": {
     "react": "17.x"
   },
   "devDependencies": {
-    "nwb": "0.21.x",
     "@types/react": "^17.0.42",
     "@types/roslib": "^1.9.0",
     "typescript": "^4.6.2"
