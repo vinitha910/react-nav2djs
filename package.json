@@ -21,15 +21,18 @@
   "dependencies": {
     "eventemitter2": "^5.0.1",
     "latest-createjs": "^1.0.24",
-    "roslib": "^0.20.0"
+    "roslib": "^0.20.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "react": "17.x"
   },
   "devDependencies": {
     "nwb": "0.21.x",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "@types/react": "^17.0.42",
+    "@types/roslib": "^1.9.0",
+    "typescript": "^4.6.2"
   },
   "author": "",
   "homepage": "",
