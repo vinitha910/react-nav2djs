@@ -2,7 +2,6 @@ import * as React  from 'react';
 import NAV2D from './vendor/nav2d.js';
 import ROS2D from './vendor/ros2d.js';
 import ROSLIB from 'roslib';
-import PropTypes from 'prop-types';
 
 interface Nav2dProps {
   ros?: ROSLIB.Ros;
