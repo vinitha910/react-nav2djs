@@ -37,7 +37,10 @@
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GLDuval/react-nav2djs.git"
+  },
   "keywords": [
     "react-component"
   ]
