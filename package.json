@@ -16,7 +16,7 @@
     "build:cjs": "tsc --module commonjs --outDir dist/cjs"
   },
   "dependencies": {
-    "eventemitter2": "^5.0.1",
+    "eventemitter2": "^6.4.9",
     "latest-createjs": "^1.0.24",
     "react": "17.x",
     "react-dom": "^17.0.2",

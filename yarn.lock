@@ -124,12 +124,7 @@
     "engine.io-parser" "~5.0.3"
     "ws" "~8.11.0"
 
-"eventemitter2@^5.0.1":
-  "integrity" "sha1-YZegldX7a1folC9v1+qtY6CclFI="
-  "resolved" "https://registry.npmjs.org/eventemitter2/-/eventemitter2-5.0.1.tgz"
-  "version" "5.0.1"
-
-"eventemitter2@^6.4.0":
+"eventemitter2@^6.4.0", "eventemitter2@^6.4.9":
   "integrity" "sha512-JEPTiaOt9f04oa6NOkc4aH+nVp5I3wEjpHbIPqfgCdD5v5bUzy7xQqwcVO2aDQgOWhI28da57HksMrzK9HlRxg=="
   "resolved" "https://registry.npmjs.org/eventemitter2/-/eventemitter2-6.4.9.tgz"
   "version" "6.4.9"
