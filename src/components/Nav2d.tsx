@@ -1,6 +1,6 @@
 import * as React  from 'react';
-import NAV2D from './vendor/nav2d.js';
-import ROS2D from './vendor/ros2d.js';
+import NAV2D from '../vendor/nav2d.js';
+import ROS2D from '../vendor/ros2d.js';
 import ROSLIB from 'roslib';
 
 interface Nav2dProps {
@@ -18,7 +18,7 @@ const Nav2d: React.FC<Nav2dProps> = ({ ros = new ROSLIB.Ros({ url: 'ws://localho
       width,
       height,
     });
-    const nav = NAV2D.OccupancyGridClientNav({
+    NAV2D.OccupancyGridClientNav({
       ros,
       rootObject: viewer.scene,
       viewer,
