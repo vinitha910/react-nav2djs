@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import NAV2D from '../vendor/nav2d.js';
 import ROS2D from '../vendor/ros2d.js';
-import ROSLIB from 'roslib';
 var Nav2d = function (_a) {
-    var _b = _a.ros, ros = _b === void 0 ? new ROSLIB.Ros({ url: 'ws://localhost:9090' }) : _b, _c = _a.id, id = _c === void 0 ? 'nav2d' : _c, _d = _a.width, width = _d === void 0 ? 500 : _d, _e = _a.height, height = _e === void 0 ? 500 : _e, _f = _a.serverName, serverName = _f === void 0 ? '/move_base' : _f;
+    var ros = _a.ros, _b = _a.id, id = _b === void 0 ? 'nav2d' : _b, _c = _a.width, width = _c === void 0 ? 500 : _c, _d = _a.height, height = _d === void 0 ? 500 : _d, _e = _a.serverName, serverName = _e === void 0 ? '/move_base' : _e;
     useEffect(function () {
         var viewer = new ROS2D.Viewer({
             divID: id,

@@ -4,14 +4,14 @@ import ROS2D from '../vendor/ros2d.js';
 import ROSLIB from 'roslib';
 
 interface Nav2dProps {
-  ros?: ROSLIB.Ros;
-  id?: string;
-  width?: number;
-  height?: number;
+  ros: ROSLIB.Ros;
+  id: string;
+  width: number;
+  height: number;
   serverName?: string;
 }
 
-const Nav2d: FC<Nav2dProps> = ({ ros = new ROSLIB.Ros({ url: 'ws://localhost:9090' }), id = 'nav2d', width = 500, height = 500, serverName = '/move_base' }) => {
+const Nav2d: FC<Nav2dProps> = ({ ros, id = 'nav2d', width = 500, height = 500, serverName = '/move_base' }) => {
   useEffect(() => {
     const viewer = new ROS2D.Viewer({
       divID: id,
