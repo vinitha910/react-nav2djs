@@ -152,7 +152,7 @@ NAV2D.Navigator = function(options) {
     size : 25,
     strokeSize : 1,
     fillColor : createjs.Graphics.getRGB(255, 128, 0, 0.66),
-    pulse : true
+    pulse : false
   });
   // wait for a pose to come in first
   robotMarker.visible = false;
@@ -162,14 +162,14 @@ NAV2D.Navigator = function(options) {
   // setup a listener for the robot pose
   var poseListener = new ROSLIB.Topic({
     ros : ros,
-    name : '/robot_pose',
-    messageType : 'geometry_msgs/Pose',
+    name : '/amcl_pose',
+    messageType : 'geometry_msgs/PoseWithCovarianceStamped',
     throttle_rate : 100
   });
   poseListener.subscribe(function(pose) {
     // update the robots position on the map
-    robotMarker.x = pose.position.x;
-    robotMarker.y = -pose.position.y;
+    robotMarker.x = pose.pose.pose.position.x;
+    robotMarker.y = -pose.pose.pose.position.y;
     if (!initScaleSet) {
       robotMarker.scaleX = 1.0 / stage.scaleX;
       robotMarker.scaleY = 1.0 / stage.scaleY;
@@ -177,14 +177,14 @@ NAV2D.Navigator = function(options) {
     }
 
     // change the angle
-    robotMarker.rotation = stage.rosQuaternionToGlobalTheta(pose.orientation);
+    robotMarker.rotation = stage.rosQuaternionToGlobalTheta(pose.pose.pose.orientation);
 
     robotMarker.visible = true;
   });
 
   if (withOrientation === false){
     // setup a double click listener (no orientation)
-    this.rootObject.addEventListener('dblclick', function(event) {
+    this.rootObject.addEventListener('click', function(event) {
       // convert to ROS coordinates
       var coords = stage.globalToRos(event.stageX, event.stageY);
       var pose = new ROSLIB.Pose({
@@ -326,7 +326,7 @@ NAV2D.OccupancyGridClientNav = function(options) {
   var that = this;
   options = options || {};
   this.ros = options.ros;
-  var topic = options.topic || '/map';
+  var topic = options.topic || 'map';
   var continuous = options.continuous;
   this.serverName = options.serverName || '/move_base';
   this.actionName = options.actionName || 'move_base_msgs/MoveBaseAction';

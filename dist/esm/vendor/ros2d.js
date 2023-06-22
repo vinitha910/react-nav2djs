@@ -424,11 +424,12 @@ ROS2D.NavigationArrow = function (options) {
     var graphics = new createjs.Graphics();
     // line width
     graphics.setStrokeStyle(strokeSize);
-    graphics.moveTo(-size / 2.0, -size / 2.0);
+    graphics.moveTo(0.0, size / 2.0);
     graphics.beginStroke(strokeColor);
     graphics.beginFill(fillColor);
-    graphics.lineTo(size, 0);
-    graphics.lineTo(-size / 2.0, size / 2.0);
+    graphics.lineTo(-size / 2.0, -size / 2.0);
+    graphics.lineTo(size / 2.0, -size / 2.0);
+    graphics.lineTo(0.0, size / 2.0);
     graphics.closePath();
     graphics.endFill();
     graphics.endStroke();
